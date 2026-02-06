@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexia Melusine — Portais</title>
+  <style>
+    :root {
+      --glass-bg: rgba(255,255,255,0.12);
+      --glass-border: rgba(255,255,255,0.25);
+      --txt: #ffffff;
+      --accent: #c2185b;
+      --shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--txt);
+      background: radial-gradient(circle at top, #2a0d1f, #0b0207 70%);
+      display: flex;
+      justify-content: center;
+      padding: 24px 12px 60px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .profile {
+      position: relative;
+      text-align: center;
+      padding: 28px 20px 20px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 22px;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow);
+    }
+
+    .profile img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.35);
+      box-shadow: 0 0 0 6px rgba(194,24,91,0.25);
+      margin-bottom: 12px;
+    }
+
+    .profile h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+    }
+
+    .profile p {
+      margin: 6px 0 0;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    details {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 18px;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 16px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+    }
+
+    summary::after {
+      content: '▾';
+      position: absolute;
+      right: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px 16px 18px;
+    }
+
+    .links a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--txt);
+      padding: 14px 16px 14px 54px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .links a::before {
+      content: attr(data-icon);
+      position: absolute;
+      left: 14px;
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+    }
+
+    /* Ícones automáticos por rede */
+    .links a[href*="instagram"]::before { content: "📸"; }
+    .links a[href*="threads"]::before { content: "🧵"; }
+    .links a[href*="tiktok"]::before { content: "🎵"; }
+    .links a[href*="youtube"]::before { content: "▶️"; }
+    .links a[href*="spotify"]::before { content: "🎧"; }
+    .links a[href*="anchor.fm"]::before { content: "🎙️"; }
+    .links a[href*="t.me"]::before,
+    .links a[href*="telegram"]::before { content: "✈️"; }
+    .links a[href*="whatsapp"]::before { content: "💬"; }
+    .links a[href*="discord"]::before { content: "🟣"; }
+    .links a[href*="facebook"]::before { content: "📘"; }
+    .links a[href*="bsky"]::before { content: "🦋"; }
+    .links a[href*="meta.ai"]::before { content: "🧠"; }
+    .links a[href*="sora"]::before { content: "✨"; }
+    .links a[href*="pinterest"]::before { content: "📌"; }
+    .links a[href*="kwai"]::before { content: "🔥"; }
+    .links a[href*="reddit"]::before { content: "👁️"; }
+    .links a[href*="x.com"]::before { content: "✖️"; }
+    .links a[href*="substack"]::before { content: "✉️"; }
+
+    .links a:active {
+      transform: scale(0.97);
+      background: rgba(194,24,91,0.35);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      opacity: 0.6;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="profile">
+      <img src="https://raw.githubusercontent.com/pombagiras/melusine/refs/heads/main/Al%C3%AA%20(3)%20(3)%20(1).png" alt="Alexia Melusine" />
+      <h1>Alexia Melusine</h1>
+      <p>Portais • Espelhos • Pombagiras</p>
+    </div>
+
+    <details open>
+      <summary>TikTok</summary>
+      <div class="links">
+        <a href="https://www.tiktok.com/@alexia.melusine" target="_blank">@alexia.melusine</a>
+        <a href="https://www.tiktok.com/@espelhosdepombagira?lang=pt-BR" target="_blank">@espelhosdepombagira</a>
+        <a href="https://www.tiktok.com/@almasdepombagira?lang=pt-BR" target="_blank">@almasdepombagira</a>
+        <a href="https://www.tiktok.com/@alexiarosadefogo?lang=pt-BR" target="_blank">@alexiarosadefogo</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>Instagram / Threads</summary>
+      <div class="links">
+        <a href="https://www.instagram.com/almasdepombagira/" target="_blank">Instagram Almas de Pombagira</a>
+        <a href="https://www.instagram.com/alexiamelusine/" target="_blank">Instagram Alexia Melusine</a>
+        <a href="https://www.threads.com/@almasdepombagira" target="_blank">Threads Almas de Pombagira</a>
+        <a href="https://www.threads.com/@alexiamelusine" target="_blank">Threads Alexia Melusine</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>Vídeo / Áudio</summary>
+      <div class="links">
+        <a href="https://www.youtube.com/@almasdepombagira" target="_blank">YouTube Almas de Pombagira</a>
+        <a href="https://open.spotify.com/user/31otpns4kghskno7igk5h74mow54?si=892a0160108e4fee" target="_blank">Spotify</a>
+        <a href="https://anchor.fm/s/10ebc29d8/podcast/rss" target="_blank">Podcast RSS</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>Comunidades</summary>
+      <div class="links">
+        <a href="https://t.me/pomba_giras" target="_blank">Telegram</a>
+        <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank">WhatsApp Channel</a>
+        <a href="https://discord.gg/gWZP8R7Dqu" target="_blank">Discord</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>Outras Redes</summary>
+      <div class="links">
+        <a href="https://www.facebook.com/alexia.tsan.7" target="_blank">Facebook</a>
+        <a href="https://bsky.app/profile/almasdepombagira.bsky.social" target="_blank">Bluesky</a>
+        <a href="https://www.meta.ai/@alexiamelusine" target="_blank">Meta AI</a>
+        <a href="https://sora.chatgpt.com/profile/alexialuzdeferro" target="_blank">Sora / ChatGPT</a>
+        <a href="https://br.pinterest.com/almasdepombagira/" target="_blank">Pinterest</a>
+        <a href="https://www.kwai.com/@AlmasdePombagira" target="_blank">Kwai Almas</a>
+        <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank">Kwai Rosa de Fogo</a>
+        <a href="https://www.kwai.com/@espelhosdepombagira" target="_blank">Kwai Espelhos</a>
+        <a href="https://www.reddit.com/user/Alexia-Luz-de-Ferro/" target="_blank">Reddit</a>
+        <a href="https://x.com/PambuNjila" target="_blank">X / Twitter</a>
+        <a href="https://substack.com/@alexiamelusine" target="_blank">Substack</a>
+      </div>
+    </details>
+
+    <footer>
+      © Alexia Melusine • Axé
+    </footer>
+
+  </div>
+</body>
+</html>
